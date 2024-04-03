@@ -3,11 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
-    <script src="rockPaperScissor.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/rockPaperScissor.js"></script>
+    <link
+            rel="preconnect"
+            href="https://fonts.bunny.net"/>
+    <link
+            href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap"
+            rel="stylesheet"/>
 </head>
 <body>
 
+<main class="container mx-auto">
 
+    <div class="flex flex-col justify-center items-center h-screen space-y-8">
+        <h1 class="text-3xl font-bold">
+            Hi there <i class="fa-solid text-violet-800 fa-hand"></i>, Let's play Rock, Paper, Scissors
+        </h1>
+        <p class="text-xl underline underline-offset-8">
+            Choose your weapon:
+        </p>
+        <div class="flex justify-center items-center space-x-8">
+            <button id="rock" onclick="getPlayerChoice(this.id); getComputerChoice()"
+                    class="flex flex-col hover:drop-shadow-xl hover:-translate-y-2 space-y-2 justify-center text-violet-800 items-center border border-violet-800 p-4 rounded-2xl bg-violet-100">
+                <i class="fa-solid fa-2xl p-6 fa-gem"></i>
+                Rock
+            </button>
+            <button id="paper" onclick="getPlayerChoice(this.id); getComputerChoice()"
+                    class="flex flex-col hover:drop-shadow-xl hover:-translate-y-2 space-y-2 justify-center text-teal-800 items-center border border-teal-800 p-4 rounded-2xl bg-teal-100">
+                <i class="fa-solid fa-2xl p-6 fa-scroll"></i>
+                Paper
+            </button>
 
+            <button id="scissors" onclick="getPlayerChoice(this.id); getComputerChoice()"
+                    class="flex flex-col hover:drop-shadow-xl hover:-translate-y-2 space-y-2 justify-center text-rose-800 items-center border border-rose-800 p-4 rounded-2xl bg-rose-100">
+                <i class="fa-solid fa-2xl p-6 fa-scissors"></i>
+                Scissors
+            </button>
+        </div>
+        <div id="result" class="flex items-center space-x-10 divide-solid">
+            <div class="space-y-4">
+                <p class="text-xl font-bold"> Your Weapon:</p>
+                <div class="w-28 font-bold flex justify-center items-center space-x-2 text-green-800 border border-green-800 p-4 rounded-2xl bg-green-100">
+                <p id="player-choice-div" class="text-lg">...</p>
+            </div>
+            </div>
+            <div class="border-l border-gray-600 h-20"></div>
+            <div class="space-y-4">
+                <p class="text-xl font-bold"> Bots Weapon:</p>
+                <div class="w-28 font-bold flex justify-center items-center space-x-2 text-amber-800 border border-amber-800 p-4 rounded-2xl bg-amber-100">
+                    <p id="bot-choice-div" class="text-lg">...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center space-x-4">
+            <h1 class="text-xl">Result: </h1>
+            <p id="result-text" class="text-xl text-blue-800 px-4 py-2 border border-blue-800 bg-blue-200 font-bold rounded-2xl">...</p>
+        </div>
+
+    </div>
+</main>
+
+<script
+        src="https://kit.fontawesome.com/59539ec33f.js"
+        crossorigin="anonymous">
+</script>
 </body>
 </html>
